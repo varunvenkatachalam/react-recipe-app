@@ -3,6 +3,7 @@ import axios from "axios";
 import { useCookies } from "react-cookie";
 import { useNavigate, Link } from "react-router-dom"; // Import Link for redirection
 import "./login.css";
+import 'bootstrap/dist/css/bootstrap.min.css'; 
 
 const Login = () => {
   const [username, setUsername] = useState("");
