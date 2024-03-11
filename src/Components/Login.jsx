@@ -1,8 +1,7 @@
-// Login.js
 import React, { useState } from "react";
 import axios from "axios";
 import { useCookies } from "react-cookie";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom"; // Import Link for redirection
 import "./login.css";
 
 const Login = () => {
@@ -41,6 +40,11 @@ const Login = () => {
     }
   };
 
+  // Redirect to register page if not registered
+  const redirectToRegister = () => {
+    navigate("/auth/register");
+  };
+
   return (
     <div className="auth-container">
       <form onSubmit={handleSubmit} className="login-form">
@@ -64,7 +68,13 @@ const Login = () => {
           />
         </div>
         <button type="submit">Login</button>
+        {/* Link to register page */}
+        <p>Not registered? <Link to="/auth/register">Register here</Link></p>
+        <Link to="/">
+          <button >Back TO Home</button>
+        </Link>
       </form>
+      
     </div>
   );
 };

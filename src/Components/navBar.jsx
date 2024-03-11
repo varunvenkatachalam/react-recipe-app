@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
+import "./navbar.css"; // Import the CSS file
 
 export const Navbar = () => {
   const [cookies, setCookies] = useCookies(["access_token"]);
@@ -16,20 +17,23 @@ export const Navbar = () => {
 
   return (
     <div className="navbar">
-      {/* <Link to="/">Home</Link> */}
-      {cookies.access_token ? (
-        <>
-          <button onClick={logout}>Logout</button>
-          {/* <button>Action 1</button>
-          <button>Action 2</button> */}
-          {/* Add more buttons as needed */}
-        </>
-      ) : (
-        <>
-          <Link to="/auth/login">Login</Link>
-          <Link to="/auth/register">Register</Link>
-        </>
-      )}
+      {/* Links aligned to the right */}
+      <div className="right-links">
+        {cookies.access_token ? (
+          <>
+            {/* <Link to="/">Home</Link> */}
+            <button onClick={logout}>Logout</button>
+            {/* <button>Action 1</button>
+            <button>Action 2</button> */}
+            {/* Add more buttons as needed */}
+          </>
+        ) : (
+          <>
+            <Link to="/auth/login">Login</Link>
+            <Link to="/auth/register">Register</Link>
+          </>
+        )}
+      </div>
     </div>
   );
 };
