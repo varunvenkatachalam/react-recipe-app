@@ -1,4 +1,4 @@
-import './App.css';
+// import './App.css';
 import Meal from './Components/Meal.jsx'
 import './Components/style.css';
 import './Components/style.css'

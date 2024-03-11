@@ -3,7 +3,7 @@ import MealItem from './MealItem.jsx';
 import RecipeIndex from './RecipeIndex.jsx';
 import './style.css';
 const Meal=()=>{
-    const[url,setUrl]=useState("https://www.themealdb.com/api/json/v1/1/search.php?f=b");
+    const[url,setUrl]=useState("https://www.themealdb.com/api/json/v1/1/search.php?f=c");
     const [item,setItem]=useState();
     const [show,setShow]=useState(false);
     const [search,setSearch]=useState("");
@@ -33,7 +33,7 @@ const Meal=()=>{
 
                 </div>
                 <div className="searchBox">
-                    <input type="search" className="search-bar" onChange={e=>setSearch(e.target.value)} onKeyPress={searchRecipe}/>
+                    <input type="search" placeholder="Search Your Recipe..." className="search-bar" onChange={e=>setSearch(e.target.value)} onKeyPress={searchRecipe}/>
                 </div>
                 <div className="container">
                     

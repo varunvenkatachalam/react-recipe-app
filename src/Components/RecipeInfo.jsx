@@ -33,22 +33,31 @@ const RecipeInfo=()=>{
                         </div>
                     </div>
                     <div className="recipe-detials">
+                        <div class="ingre-cont">
                         <div className="ingredients">
-                            <h2>Ingredients</h2>
-                            <h4>{item.strIngredient1}:{item.strMeasure1}</h4>
-                            <h4>{item.strIngredient2}:{item.strMeasure2}</h4>
-                            <h4>{item.strIngredient3}:{item.strMeasure3}</h4>
-                            <h4>{item.strIngredient4}:{item.strMeasure4}</h4>
-                            <h4>{item.strIngredient5}:{item.strMeasure5}</h4>
-                            <h4>{item.strIngredient6}:{item.strMeasure6}</h4>
-                            <h4>{item.strIngredient7}:{item.strMeasure7}</h4>
-                            <h4>{item.strIngredient8}:{item.strMeasure8}</h4>
+                            <h4>Ingredients</h4>
+                        <ul>
+                                {Object.keys(item).map(key => {
+                                    if (key.includes("strIngredient") && item[key]) {
+                                        const ingredientNumber = key.slice(-1);
+                                        const measureKey = `strMeasure${ingredientNumber}`;
+                                        return (
+                                            <li key={ingredientNumber}>
+                                                {item[key]}: {item[measureKey]}
+                                            </li>
+                                        );
+                                    }
+                                    return null;
+                                })}
+                            </ul>
                             
                         </div>
                         <div className="instructions">
                             <h2>Instructions</h2><br />
                             <h4>{item.strInstructions}</h4>
                         </div>
+                        </div>
+                
                         <div className="vedio">
                         <iframe
                             title="Recipe Video"

@@ -27,7 +27,7 @@ const Login = () => {
       window.localStorage.setItem("userID", userID);
 
       // Redirect to home page after successful login
-      navigate("/");
+      navigate("/meal");
 
       // Clear input fields
       setUsername("");

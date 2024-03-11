@@ -12,7 +12,7 @@ const Home = () => {
         <p className="description">
           Welcome to Recipe Finder, your ultimate destination for discovering delicious recipes from around the world! Whether you're a cooking enthusiast or just looking for some culinary inspiration, we've got you covered.
         </p>
-        <Link to="/meal">
+        <Link to="/auth/login">
           <button>Surf Your Recipee...</button>
         </Link>
       </div>
